@@ -7,8 +7,9 @@
     <meta charset="utf-8">
     <title>TEMPLATATOR</title>
 
-    <!-- Bootstrap -->
+    
     <script src="js/jquery-1.11.3-min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="js/EXT-filesaver.js" type="text/javascript"></script>
     <script src="js/EXT-canvas-toBlob.js" type="text/javascript"></script>
     <script src="js/EXT-html2canvas.0.4.1.js" type="text/javascript"></script>
@@ -100,48 +101,48 @@ de nouveaux matériaux.</p>
 <div id="outils">    
 
 <nav class="menu">
-    <a href="#">Texte</a>
-    <a href="#">Image</a>
-    
-  <a href="#" id="the-link" onClick="shotit()">Téléchager</a>
-    </nav>
+    <a href="#" class="active" onClick="changezone(1)" id="lienz-1">Texte</a>
+    <a href="#" onClick="changezone(2)" id="lienz-2">Image</a>
+    <a href="#" id="the-link" onClick="shotit()">Téléchager</a>
+</nav>
         
     
-    <p>Texte principal <em>forcer un saut de ligne &lt;br&gt;</em></p>
-    <textarea id="select-text" rows="4" cols="50">Nous avons toujours conservé nos valeurs d'artisan, mais nous avons su nous remettre en question et être précurseurs sur l'utilisation de nouveaux matériaux.</textarea>
+    <div id="zone-1">
     
-    <br><br>
-    <p>Taille</p>
-    <input type="number" id="select-text-size" value="176">
-    <p>Interlignage</p>
-    <input type="number" id="select-text-lh" value="130">
-    
-    <br>
-    <hr>
-    <p>Nom</p>
-    <input type="text" id="select-text-nom" value="Aymeric Le Brun">
-    
-    <p>Fonction</p>
-    <input type="text" id="select-text-societe" value="Dirigeant de CYFAC">
-    <br>
-    <p>Taille</p>
-    <input type="number" id="select-text-nom-size" value="128">
-    
-    
-    <br>
-    <hr>
-  <p>Image</p>
- <input type="file" id="inputFileToLoad">
-    
-  <button onClick="encodeImageFileAsURL()">Ajouter la photo</button>
-    <br>
-    <p>Taille de l'image</p>
-    <input type="number" id="select-image-size" value="1">
-    
+        <p>Texte principal <em>forcer un saut de ligne &lt;br&gt;</em></p>
+        <textarea id="select-text" rows="4" cols="50">Nous avons toujours conservé nos valeurs d'artisan, mais nous avons su nous remettre en question et être précurseurs sur l'utilisation de nouveaux matériaux.</textarea>
 
-<br>
-      <hr>
-  
+        <br><br>
+        <p>Taille</p>
+        <input type="number" id="select-text-size" value="176">
+        <p>Interlignage</p>
+        <input type="number" id="select-text-lh" value="130">
+
+        <br>
+        <hr>
+        <p>Nom</p>
+        <input type="text" id="select-text-nom" value="Aymeric Le Brun">
+
+        <p>Fonction</p>
+        <input type="text" id="select-text-societe" value="Dirigeant de CYFAC">
+        <br>
+        <p>Taille</p>
+        <input type="number" id="select-text-nom-size" value="128">
+    
+    </div>
+    
+    
+    
+    <div id="zone-2">
+      <p>Image</p>
+     <input type="file" id="inputFileToLoad">
+
+      <button onClick="encodeImageFileAsURL()">Ajouter la photo</button>
+        <br>
+        <p>Taille de l'image</p>
+        <input type="number" id="select-image-size" value="1">
+    
+    </div>
     
     
     
@@ -156,13 +157,24 @@ de nouveaux matériaux.</p>
     
     
     
-
-    <section id="test-result">
-      <h2>JPEG</h2>
-      <div><img src="" id="screenshot"></div>
-      <pre id="size"></pre>
-    </section>
     
+    
+    <script type="text/javascript">
+    function changezone(id) {
+        $("[id*='zone-']").each(
+        function(){ $(this).style( 'display', 'none' ); }
+        );
+        var laClass = 'zone-' + id;
+        document.getElementById(laClass).style.display = 'block';
+        
+        $("[id*='lienz-']").each(
+        function(){ $(this).removeClass('active'); }
+        );
+        var laClasslink = '#lienz-' + id;
+        $(laClasslink).addClass('active');
+	}
+
+    </script>
     
     
     

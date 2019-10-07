@@ -1,5 +1,5 @@
 html {
-    background-color: rgba(29, 29, 29, 1.00);
+    background-color: #222222;
 }
 div, p {
     margin: 0;
@@ -7,22 +7,25 @@ div, p {
 }
 #test-subject {
     position: fixed;
-    maring: 0;
+    display: inline-block;
+    line-height: 0;
+    margin: 0;
     padding: 0;
     top: 0;
     left: 0;
     right: 0;
     text-align: center;
-    background-color: rgba(29, 29, 29, 1.00);
 }
-#screen {
-    display: inline-block;
+html body #screen {
+    display: block;
     position: relative;
-    maring: 0;
-    padding: 0;
+    margin: 0 !important;
+    padding: 0 !important;
     max-width: 800px;
     overflow: hidden;
     text-align: left;
+    line-height: 0;
+    display: inline-block;
 }
 #aremplacer {
     position: absolute;
@@ -35,7 +38,7 @@ div, p {
     position: absolute;
     top: 6.5%;
     left: 3.7%;
-    height: 61.4%;
+    height: 62%;
     width: 22.7%;
     overflow: hidden;
 }
@@ -77,6 +80,14 @@ html #aremplacer span.texte-societe {
     font-weight: 300 !important;
     color: #373CF5;
 }
+
+
+
+
+
+
+
+/* OUTILS --------------------------------------------------------------------------------------------------------------------------------- */
 #outils {
     position: fixed;
     maring: 0;
@@ -85,10 +96,89 @@ html #aremplacer span.texte-societe {
     left: 0;
     right: 0;
     text-align: left;
-    background-color: rgba(129, 129, 129, 1.00);
+    background-color: #F2F2F2;
     font-size: 12px;
-    padding: 1em 2em;
+    min-height: 300px;
+    max-height: 50vh;
+    overflow: auto;
 }
+
+nav.menu {
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: stretch;
+}
+
+nav.menu a {
+    flex: 1 1 auto;
+    align-self: stretch;
+	padding-left: 0%;
+	padding-right: 0%;
+    border-bottom: #222222 1px solid; 
+    text-align: center;
+    display: inline-block;
+    font-weight: 700; 
+    color: #4D4D4D;
+    text-decoration: none;
+    line-height: 2em; 
+    font-size: 1.5em;
+    position: relative;
+    transition: 0.25s cubic-bezier(0,.65,.54,.99) all;
+}
+
+@media (max-width:600px){
+	nav.menu a { width:100%; }
+}
+
+nav.menu a:after {
+    content: '';
+    display: block;
+    background: #373CF5;
+    width:70%;
+    height: 0px;
+    position: absolute;
+    bottom: -1px;
+    left:15%;
+    transition: 0.25s cubic-bezier(0,.65,.54,.99) all;
+}
+
+
+nav.menu a.active { 
+    color: #373CF5;
+}
+nav.menu a.active:after {
+    height: 5px;
+}
+nav.menu:hover a.active:not(:hover):after {
+    height: 0px;
+}
+
+nav.menu a:hover { 
+    color: #0000CC;
+}
+nav.menu a:hover:after {
+    height: 5px;
+    left:0;
+    width:100%;
+    background: #0000CC;
+}
+#the-link{
+    background: #373CF5;
+    color: white;
+}
+#the-link:hover{
+    background: #0000CC;
+}
+
+[id*='zone-']{
+    padding: 1em 3%;
+}
+
+
+
 #outils H1 {
     display: block;
     maring: 0;
