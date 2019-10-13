@@ -169,8 +169,8 @@ tr img {
 .contient_col [class*='col'] {
     flex: 1 1 auto;
     align-self: stretch;
-	padding-left: 4%;
-	padding-right: 4%;
+	padding-left: 2%;
+	padding-right: 2%;
 }
 .contient_col .contient_col [class*='col'] {
 	padding-left: 0%;

@@ -53,9 +53,9 @@ html body #screen {
 html #aremplacer p.texte-principal {
     position: absolute;
     top: 11.5%;
-    left: 26%;
+    left: 28.5%;
     height: 44.5%;
-    width: 68%;
+    width: 66.2%;
     font-size: 176%;
     line-height: 125%;
     font-family: 'Fira Sans', sans-serif;
@@ -65,14 +65,27 @@ html #aremplacer p.texte-principal {
 html #aremplacer .contient-texte-nom {
     position: absolute;
     top: 60%;
-    left: 26%;
+    left: 28.5%;
     height: 7.5%;
-    width: 69%;
+    width: 67%;
     font-size: 128%;
     line-height: 125%;
     font-family: 'Fira Sans', sans-serif;
     font-weight: 900;
     color: #373CF5;
+    vertical-align: middle;
+    display: inline-block;
+}
+html #aremplacer .contient-texte-nom strong{
+    vertical-align: middle;
+    height:100%;
+    width:1px;
+    display: inline-block;
+}
+
+html #aremplacer .contient-texte-nom span{
+    vertical-align: middle;
+    display: inline-block;
 }
 html #aremplacer span.texte-societe {
     padding-left: 2%;
@@ -174,7 +187,7 @@ nav.menu a:hover:after {
 }
 
 [id*='zone-']{
-    padding: 1em 3%;
+    padding: 0 4%; 
 }
 
 
@@ -190,39 +203,40 @@ nav.menu a:hover:after {
 #outils p {
     box-sizing: border-box;
     vertical-align: middle;
-    display: inline-block;
+    display: block;
     margin: 0;
-    margin-bottom: 0.5em;
-    padding: 0.25em 0.5em;
+    margin-bottom: 0.2em;
+    padding: 0em;
     text-align: left;
-    font-size: 12px;
+    font-size: 15px;
     line-height: 16px !important;
-    color: white;
-    font-weight: 400;
-    background-color: rgba(0, 0, 0, 0.30);
-    width: 100px;
+    color: #4D4D4D;
+    font-weight: 300;
 }
 #outils textarea {
     box-sizing: border-box;
     vertical-align: middle;
     display: inline-block;
+    font-family: 'Fira Sans';
     margin: 0;
     margin-left: -5px;
     margin-right: 1em;
     padding: 0.25em 0.5em;
     text-align: left;
     background-color: white;
-    font-size: 12px;
-    border-radius: 0 1em 1em 0;
+    font-size: 13px;
+    border-radius: 0;
     font-weight: 500;
     border: none;
-    line-height: 16px;
-    width: 300px
+    line-height: 19px;
+    width: 100%;
+    height: 60px; 
 }
 #outils input {
     box-sizing: border-box;
     vertical-align: middle;
     display: inline-block;
+    font-family: 'Fira Sans';
     margin: 0;
     margin-left: -5px;
     margin-right: 1em;
@@ -230,26 +244,26 @@ nav.menu a:hover:after {
     padding: 0.25em 0.5em;
     text-align: left;
     background-color: white;
-    font-size: 12px;
-    border-radius: 0 1em 1em 0;
-    font-weight: 800;
+    font-size: 13px;
+    border-radius: 0;
+    font-weight: 500;
     border: none;
-    line-height: 16px;
-    height: calc( 16px+ 0.5em);
-    width: 300px
+    line-height: 24px;
+    height: calc( 24px+ 0.5em);
+    width: 100%;
 }
 #outils input[type="number"] {
     font-size: 14px;
-    line-height: 16px;
-    width: 70px;
+    line-height: 24px;
+    width: 100%;
     position: relative;
     overflow: hidden;
 }
 /* Spin Buttons modified */
 input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
-    background: #FFF url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAKUlEQVQYlWNgwAT/sYhhKPiPT+F/LJgEsHv37v+EMGkmkuImoh2NoQAANlcun/q4OoYAAAAASUVORK5CYII=) no-repeat center center;
-    border-radius: 0 1em 1em 0;
+    background: #4D4D4D url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAKUlEQVQYlWNgwAT/sYhhKPiPT+F/LJgEsHv37v+EMGkmkuImoh2NoQAANlcun/q4OoYAAAAASUVORK5CYII=) no-repeat center center;
+    border-radius: 0 ;
     background-size: 1.1em;
     width: 1.5em;
     opacity: .5; /* shows Spin Buttons per default (Chrome >= 39) */

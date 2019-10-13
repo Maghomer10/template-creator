@@ -50,7 +50,15 @@
     </script>
     
     
-    
+    <style>
+        div[id*='zone-']{
+            display: none;
+        }
+        
+        div#zone-1{
+            display: block;
+        }
+        </style>
     
 
 </head>
@@ -85,7 +93,7 @@ su nous remettre en question
 et être précurseurs sur l'utilisation 
 de nouveaux matériaux.</p>
               
-            <p class="contient-texte-nom"><span class="texte-nom">truc de machin</span><span class="texte-societe">Société bidule</span></p>
+            <p class="contient-texte-nom"><strong></strong><span class="texte-nom">truc de machin</span><span class="texte-societe">Société bidule</span></p>
               
           <div class="image-photo" style="background-color: black" />
               <img src="https://www.cci.fr/image/image_gallery?img_id=10490544&t=1566985947021" id="cursorImage" ondragstart="return false;" style="transform: scale(1)"/>
@@ -108,39 +116,76 @@ de nouveaux matériaux.</p>
         
     
     <div id="zone-1">
+    <div class="contient_col padding_top_demi">
     
-        <p>Texte principal <em>forcer un saut de ligne &lt;br&gt;</em></p>
+        <div class="col_12 padding_bot_light">
+        <p>Texte principal  - <em>forcer un saut de ligne &lt;br&gt;</em></p>
         <textarea id="select-text" rows="4" cols="50">Nous avons toujours conservé nos valeurs d'artisan, mais nous avons su nous remettre en question et être précurseurs sur l'utilisation de nouveaux matériaux.</textarea>
-
-        <br><br>
+        </div>
+        
+        
+        <div class="col_6 padding_bot_light">
         <p>Taille</p>
-        <input type="number" id="select-text-size" value="176">
+        <input type="number" id="select-text-size" value="230">
+        </div>
+        
+        <div class="col_6 padding_bot_light">
         <p>Interlignage</p>
         <input type="number" id="select-text-lh" value="130">
+        </div>
 
-        <br>
+        
+        <div class="col_12 padding_bot_light">
         <hr>
+        </div>
+        
+        
+        <div class="col_6 padding_bot_light">
         <p>Nom</p>
         <input type="text" id="select-text-nom" value="Aymeric Le Brun">
-
+        </div>
+        
+        
+        <div class="col_6 padding_bot_light">
         <p>Fonction</p>
         <input type="text" id="select-text-societe" value="Dirigeant de CYFAC">
-        <br>
+        </div>
+        
+        <div class="col_6 padding_bot_light">
         <p>Taille</p>
-        <input type="number" id="select-text-nom-size" value="128">
+        <input type="number" id="select-text-nom-size" value="150">
+        </div>
+        
+        <div class="col_6">
+        </div>
     
+    </div>
     </div>
     
     
     
     <div id="zone-2">
-      <p>Image</p>
-     <input type="file" id="inputFileToLoad">
-
-      <button onClick="encodeImageFileAsURL()">Ajouter la photo</button>
-        <br>
+    <div class="contient_col padding_top_demi">
+    
+        <div class="col_6 padding_bot_light">
+          <p>Image</p>
+         <input type="file" id="inputFileToLoad">
+        </div>
+            
+        <div class="col_6 padding_bot_light">
+          <button onClick="encodeImageFileAsURL()">Ajouter la photo</button>
+        </div>
+        
+        
+            
+        <div class="col_6 padding_bot_light">
         <p>Taille de l'image</p>
         <input type="number" id="select-image-size" value="1">
+        </div>
+        
+            
+        <div class="col_6">
+        </div>
     
     </div>
     
