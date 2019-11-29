@@ -27,18 +27,11 @@
     <script type="text/javascript">
        var shotit = function() {
     
-    
     $('#screen').style( 'transform', 'scale(2)' );
     
     html2canvas(document.getElementById('screen'), 
                ).then(function(canvas) {
-        
       document.body.appendChild(canvas);
-       /* var data = canvas.toDataURL('image/jpeg', 1);
-       /* var src = encodeURI(data);
-        document.getElementById('screenshot').src = src;
-        document.getElementById('size').innerHTML = src.length + ' bytes';*/
-        
                       canvas.toBlob(function(blob) {
                         saveAs(blob, "template.png"); 
                       });
@@ -46,20 +39,14 @@
     
     $('#screen').style( 'transform', 'scale(1)' );
 
-
-}
+	   }
     </script>
     
     
     <style>
-        div[id*='zone-']{
-            display: none;
-        }
-        
-        div#zone-1{
-            display: block;
-        }
-        </style>
+        div[id*='zone-']{display: none;}
+        div#zone-1{display: block;}
+    </style>
     
 
 </head>
@@ -98,8 +85,12 @@ de nouveaux matériaux.</p>
               
           <div class="image-photo" style="background-color: black" >
               <img src="https://www.cci.fr/image/image_gallery?img_id=10490544&t=1566985947021" id="cursorImage" ondragstart="return false;" style="transform: scale(1)"/>
-			  </div>
           </div>
+          <div class="image-logo" style="background-color: black" >
+              <img src="template/Logo CCI - Bleu.png" id="logo"/>
+          </div>
+			  
+		  </div>
           
       </section>
     </div>
@@ -173,16 +164,20 @@ de nouveaux matériaux.</p>
           <p>Image</p>
          <input type="file" id="inputFileToLoad">
         </div>
-            
-        <div class="col_6 padding_bot_light">
-          <button onClick="encodeImageFileAsURL()">Ajouter la photo</button>
-        </div>
-        
+           
         
             
         <div class="col_6 padding_bot_light">
         <p>Taille de l'image</p>
         <input type="number" id="select-image-size" value="1">
+        </div>
+		
+		
+        <div class="col_6 padding_bot_light">
+			<h3>Changer le logo de la CCI<br>
+		    (version bleu conseillée)</h3>
+    <label >Format d'image .png</label>
+         <input type="file" id="inputFileLogo" accept="image/png">
         </div>
         
             
@@ -190,6 +185,7 @@ de nouveaux matériaux.</p>
         </div>
     
     </div>
+	</div>
     
     
     
@@ -240,76 +236,8 @@ de nouveaux matériaux.</p>
     
     
     <script type="text/javascript">
-        
-        (function($) {    
-  if ($.fn.style) {
-    return;
-  }
 
-  // Escape regex chars with \
-  var escape = function(text) {
-    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
-  };
-
-  // For those who need them (< IE 9), add support for CSS functions
-  var isStyleFuncSupported = !!CSSStyleDeclaration.prototype.getPropertyValue;
-  if (!isStyleFuncSupported) {
-    CSSStyleDeclaration.prototype.getPropertyValue = function(a) {
-      return this.getAttribute(a);
-    };
-    CSSStyleDeclaration.prototype.setProperty = function(styleName, value, priority) {
-      this.setAttribute(styleName, value);
-      var priority = typeof priority != 'undefined' ? priority : '';
-      if (priority != '') {
-        // Add priority manually
-        var rule = new RegExp(escape(styleName) + '\\s*:\\s*' + escape(value) +
-            '(\\s*;)?', 'gmi');
-        this.cssText =
-            this.cssText.replace(rule, styleName + ': ' + value + ' !' + priority + ';');
-      }
-    };
-    CSSStyleDeclaration.prototype.removeProperty = function(a) {
-      return this.removeAttribute(a);
-    };
-    CSSStyleDeclaration.prototype.getPropertyPriority = function(styleName) {
-      var rule = new RegExp(escape(styleName) + '\\s*:\\s*[^\\s]*\\s*!important(\\s*;)?',
-          'gmi');
-      return rule.test(this.cssText) ? 'important' : '';
-    }
-  }
-
-  // The style function
-  $.fn.style = function(styleName, value, priority) {
-    // DOM node
-    var node = this.get(0);
-    // Ensure we have a DOM node
-    if (typeof node == 'undefined') {
-      return this;
-    }
-    // CSSStyleDeclaration
-    var style = this.get(0).style;
-    // Getter/Setter
-    if (typeof styleName != 'undefined') {
-      if (typeof value != 'undefined') {
-        // Set style property
-        priority = typeof priority != 'undefined' ? priority : '';
-        style.setProperty(styleName, value, priority);
-        return this;
-      } else {
-        // Get style property
-        return style.getPropertyValue(styleName);
-      }
-    } else {
-      // Get CSSStyleDeclaration
-      return style;
-    }
-  };
-})(jQuery);
-        
-        
-        
-        
-        
+		
         setInterval(function(){
             var htmlString = $('#select-text').val();
             $('#aremplacer p.texte-principal').html( '<span>' + htmlString + '</span>' );
@@ -332,9 +260,13 @@ de nouveaux matériaux.</p>
             var imgsize = $('#select-image-size').val();
             var imsizecorrect = ( imgsize / 10 ) + 1;
             var imsizecorrectcss = 'scale(' + imsizecorrect + ')';
-            $('#aremplacer .image-photo #cursorImage').css( 'transform', imsizecorrectcss );
+            $('#aremplacer .image-photo img').css( 'transform', imsizecorrectcss );
+			encodeImageFileAsURL();
+			encodeLogoFileAsURL();
             
         }, 200);
+		
+		
     </script>
     
     
@@ -353,37 +285,40 @@ de nouveaux matériaux.</p>
     
     <script type="text/javascript">
     
-    
-    /*
-** version3: another local image convert
-** add html:
-** <input id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL();" />
-** <div id="imgTest"></div>
-*/
+
 function encodeImageFileAsURL(){
 
     var filesSelected = document.getElementById("inputFileToLoad").files;
     if (filesSelected.length > 0)
     {
         var fileToLoad = filesSelected[0];
-
         var fileReader = new FileReader();
-
         fileReader.onload = function(fileLoadedEvent) {
-            var srcData = fileLoadedEvent.target.result; // <--- data: base64
-
+            var srcData = fileLoadedEvent.target.result; 
             var newImage = document.createElement('img');
             var newBG = 'url(' + srcData + ')';
-            
             $('#aremplacer .image-photo #cursorImage').attr( 'src', srcData );
-/*
-            document.getElementById("imgTest").innerHTML = newImage.outerHTML;
-            alert("Converted Base64 version is "+document.getElementById("imgTest").innerHTML);
-            console.log("Converted Base64 version is "+document.getElementById("imgTest").innerHTML);*/
         }
         fileReader.readAsDataURL(fileToLoad);
     }
-}
+}/*
+
+function encodeLogoFileAsURL(){
+
+    var filesSelected = document.getElementById("inputFileToLoad").files;
+    if (filesSelected.length > 0)
+    {
+        var fileToLoad = filesSelected[0];
+        var fileReader = new FileReader();
+        fileReader.onload = function(fileLoadedEvent) {
+            var srcData = fileLoadedEvent.target.result; 
+            var newImage = document.createElement('img');
+            var newBG = 'url(' + srcData + ')';
+            $('#aremplacer .image-logo #logo').attr( 'src', srcData );
+        }
+        fileReader.readAsDataURL(fileToLoad);
+    }
+}*/
     </script>
     
     
