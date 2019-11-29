@@ -9,7 +9,7 @@
 #aremplacer .image-photo {
     position: absolute;
     top: 4.6%;
-    left: 2.9%;
+    left: 2.8%;
     height: 68.2%;
     width: 24.8%;
     overflow: hidden;
@@ -42,29 +42,31 @@
 
 html #aremplacer p.texte-principal {
     position: absolute;
-    top: 11.5%;
-    left: 28.5%;
-    height: 44.5%;
-    width: 66.2%;
+    top: 8%;
+    left: 30%;
+    height: 52%;
+    width: 65.5%;
     font-size: 176%;
     line-height: 125%;
     font-family: 'Fira Sans', sans-serif;
     font-weight: 700;
     color: white;
+	overflow: hidden;
 }
 html #aremplacer .contient-texte-nom {
     position: absolute;
-    top: 60%;
-    left: 28.5%;
-    height: 7.5%;
+    top: 62%;
+    left: 30%;
+    height: 10.5%;
     width: 67%;
     font-size: 128%;
     line-height: 125%;
     font-family: 'Fira Sans', sans-serif;
     font-weight: 900;
-    color: #373CF5;
+    color: #4D4D4D;
     vertical-align: middle;
     display: inline-block;
+	overflow: hidden;
 }
 html #aremplacer .contient-texte-nom strong{
     vertical-align: middle;
@@ -81,6 +83,6 @@ html #aremplacer span.texte-societe {
     padding-left: 2%;
     font-size: 95% !important;
     font-weight: 300 !important;
-    color: #373CF5;
+    color: #4D4D4D;
 }
 
