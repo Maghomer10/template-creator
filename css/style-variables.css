@@ -27,24 +27,80 @@ html body #screen {
     line-height: 0;
     display: inline-block;
 }
+#aremplacer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+#aremplacer .image-photo {
+    position: absolute;
+    top: 6.5%;
+    left: 3.7%;
+    height: 62%;
+    width: 22.7%;
+    overflow: hidden;
+}
+#aremplacer .image-photo #cursorImage {
+    min-height: 100%;
+    min-width: 100%;
+    height: 100%;
+    width: auto;
+    object-fit: initial;
+    max-width: none;
+}
+html #aremplacer p.texte-principal {
+    position: absolute;
+    top: 11.5%;
+    left: 28.5%;
+    height: 44.5%;
+    width: 66.2%;
+    font-size: 176%;
+    line-height: 125%;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 700;
+    color: white;
+}
+html #aremplacer .contient-texte-nom {
+    position: absolute;
+    top: 60%;
+    left: 28.5%;
+    height: 7.5%;
+    width: 67%;
+    font-size: 128%;
+    line-height: 125%;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 900;
+    color: #373CF5;
+    vertical-align: middle;
+    display: inline-block;
+}
+html #aremplacer .contient-texte-nom strong{
+    vertical-align: middle;
+    height:100%;
+    width:1px;
+    display: inline-block;
+}
+
+html #aremplacer .contient-texte-nom span{
+    vertical-align: middle;
+    display: inline-block;
+}
+html #aremplacer span.texte-societe {
+    padding-left: 2%;
+    font-size: 95% !important;
+    font-weight: 300 !important;
+    color: #373CF5;
+}
+
+
+
+
+
 
 
 /* OUTILS --------------------------------------------------------------------------------------------------------------------------------- */
-.alertie{
-	display: block;
-	position: absolute;
-	top:0;
-	bottom: 0;
-	right:0;
-	left:0;
-	background-color: rgba(224,0,3,0.67);
-	color: white;
-	font-size: 20px;
-	font-weight: 800;
-	text-align: center;
-	padding: 2em;
-}
-
 #outils {
     position: fixed;
     maring: 0;
@@ -55,15 +111,9 @@ html body #screen {
     text-align: left;
     background-color: #F2F2F2;
     font-size: 12px;
-    min-height: 100px;
+    min-height: 300px;
     max-height: 50vh;
     overflow: auto;
-	font-size:14px;
-}
-
-#outils .container{
-	margin: auto;
-	max-width: 800px;
 }
 
 nav.menu {
@@ -76,27 +126,24 @@ nav.menu {
 }
 
 nav.menu a {
-	flex: 1 1 auto;
+    flex: 1 1 auto;
     align-self: stretch;
-    padding-left: 0%;
-    padding-right: 0%;
-    border-bottom: #222222 1px solid;
+	padding-left: 0%;
+	padding-right: 0%;
+    border-bottom: #222222 1px solid; 
     text-align: center;
     display: inline-block;
-    font-weight: 700;
+    font-weight: 700; 
     color: #4D4D4D;
     text-decoration: none;
-    line-height: 1.2em;
-    font-size: 1.45em;
-	position: relative;
-    padding: 0.45em 0.25em;
+    line-height: 2em; 
+    font-size: 1.5em;
+    position: relative;
     transition: 0.25s cubic-bezier(0,.65,.54,.99) all;
 }
 
 @media (max-width:600px){
-	nav.menu a { width:50%; }
-	#outils {font-size:16px;}
-	nav.menu a { font-size: 1.2em;}
+	nav.menu a { width:100%; }
 }
 
 nav.menu a:after {
@@ -158,7 +205,6 @@ nav.menu a:hover:after {
 #outils p {
     box-sizing: border-box;
     vertical-align: middle;
-
     display: block;
     margin: 0;
     margin-bottom: 0.2em;
