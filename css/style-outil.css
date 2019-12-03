@@ -1,5 +1,13 @@
+:root{
+	--arrondi:8px;
+}
+
+
+
 html {
     background-color: #222222;
+	font-size:12px;
+	
 }
 div, p {
     margin: 0;
@@ -47,18 +55,16 @@ html body #screen {
 
 #outils {
     position: fixed;
-    maring: 0;
+    margin: 0;
     padding: 0;
     bottom: 0;
     left: 0;
     right: 0;
     text-align: left;
     background-color: #F2F2F2;
-    font-size: 12px;
     min-height: 100px;
     max-height: 50vh;
     overflow: auto;
-	font-size:14px;
 }
 
 #outils .container{
@@ -87,9 +93,9 @@ nav.menu a {
     color: #4D4D4D;
     text-decoration: none;
     line-height: 1.2em;
-    font-size: 1.45em;
+    font-size: 1.45rem;
 	position: relative;
-    padding: 0.45em 0.25em;
+    padding: 0.77rem 0.25rem;
     transition: 0.25s cubic-bezier(0,.65,.54,.99) all;
 }
 
@@ -131,16 +137,29 @@ nav.menu a:hover:after {
     width:100%;
     background: #0000CC;
 }
-#the-link{
+#telechargement{
     background: #373CF5;
     color: white;
+    transition: 0.25s cubic-bezier(0,.65,.54,.99) all;
+    padding-left: 0%;
+    padding-right: 0%;
+    border-top: #222222 1px solid;
+    text-align: center;
+    display: inline-block;
+    font-weight: 700;
+    text-decoration: none;
+    line-height: 1.2em;
+    font-size: 1.45rem;
+	position: relative;
+    padding: 0.75rem 0.25rem;
+	width: 100%;
 }
-#the-link:hover{
+#telechargement:hover{
     background: #0000CC;
 }
 
 [id*='zone-']{
-    padding: 0; 
+    padding: 0 1rem; 
 	max-width: 900px;
 	margin: 0 auto
 }
@@ -161,13 +180,13 @@ nav.menu a:hover:after {
 
     display: block;
     margin: 0;
-    margin-bottom: 0.2em;
+    margin-left: 0.15rem;
     padding: 0em;
     text-align: left;
-    font-size: 15px;
-    line-height: 16px !important;
+    font-size: 1rem;
+    line-height: 1.2em !important;
     color: #4D4D4D;
-    font-weight: 300;
+    font-weight: 400;
 }
 #outils textarea {
     box-sizing: border-box;
@@ -175,16 +194,16 @@ nav.menu a:hover:after {
     display: inline-block;
     font-family: 'Fira Sans';
     margin: 0;
-    margin-left: -5px;
-    margin-right: 1em;
-    padding: 0.25em 0.5em;
+    margin-left: 0rem;
+    margin-right: 0rem;
+    padding: 0.5rem 0.75rem;
     text-align: left;
     background-color: white;
-    font-size: 13px;
-    border-radius: 0;
+    font-size: 1rem;
+    border-radius: var(--arrondi);
     font-weight: 500;
     border: none;
-    line-height: 19px;
+    line-height: 1.3em;
     width: 100%;
     height: 60px; 
 }
@@ -194,23 +213,23 @@ nav.menu a:hover:after {
     display: inline-block;
     font-family: 'Fira Sans';
     margin: 0;
-    margin-left: -5px;
-    margin-right: 1em;
-    margin-bottom: 0.5em;
-    padding: 0.25em 0.5em;
+    margin-left: 0rem;
+    margin-right: 0rem;
+    padding: 0.5rem 0.75rem;
     text-align: left;
     background-color: white;
-    font-size: 13px;
+    font-size: 1rem;
     border-radius: 0;
     font-weight: 500;
     border: none;
-    line-height: 24px;
+    line-height: 1.2em;
     height: calc( 24px+ 0.5em);
     width: 100%;
+	border-radius: var(--arrondi);
 }
 #outils input[type="number"] {
-    font-size: 14px;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 1.2em;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -227,6 +246,7 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
     top: 0;
     right: 0;
     bottom: 0;
+	border-radius: 0 var(--arrondi) var(--arrondi) 0;
 }
 input[type="number"]::-webkit-inner-spin-button:hover, input[type="number"]::-webkit-inner-spin-button:active {
     box-shadow: 0 0 0px #0CF;
