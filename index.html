@@ -5,7 +5,8 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <title>TEMPLATATOR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Template initial</title>
 
     
     <script src="js/jquery-1.11.3-min.js"></script>
@@ -15,8 +16,15 @@
     <script src="js/EXT-html2canvas.0.4.1.js" type="text/javascript"></script>
     <script src="js/EXT-html2canvas.min.1.0.0.js" type="text/javascript"></script>  
     
-	
-    <link href="css/style-base.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="https://maghomer10.github.io/cci-dev-design/bootstrap.css">
+    <script src="https://maghomer10.github.io/cci-dev-design/JS/charteCCI.js"></script>
+    <script src="https://maghomer10.github.io/cci-dev-design/JS/popper.min.js"></script>
+    <script src="https://maghomer10.github.io/cci-dev-design/JS/bootstrap.min.js"></script>
+    <script src="https://maghomer10.github.io/cci-dev-design/JS/min-ie11CustomProperties.js"></script>	
+
+
+
     <link href="css/style-outil.css" rel="stylesheet" type="text/css">
     <link href="css/style-variables.css" rel="stylesheet" type="text/css">
 	
@@ -63,37 +71,67 @@
     
     
     
-<body class="journal-content-article"><div class="article-them-content article-simple-content">
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      
+      <a class="navbar-brand" href="#!">Template creator CCI</a>
+
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
     
- 
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="#!">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#!">Link</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+      
     
     
-    
-    <div id="test-subject">
-      <section id="screen">
+  <section id="screen">
           
           
-          <img id="fond" src="template/Template - Parole d'entrepreneur - Dev.png">
-          <div id="aremplacer">
-              
-            <p class="texte-principal">Nous avons toujours conservé nos valeurs d'artisan, mais nous avons 
+    <img id="fond" src="template/Template - Parole d'entrepreneur - Dev.png">
+    <div id="aremplacer">
+        
+      <p class="texte-principal">Nous avons toujours conservé nos valeurs d'artisan, mais nous avons 
 su nous remettre en question 
 et être précurseurs sur l'utilisation 
 de nouveaux matériaux.</p>
-              
-            <p class="contient-texte-nom"><strong></strong><span class="texte-nom">truc de machin</span><span class="texte-societe">Société bidule</span></p>
-              
-          <div class="image-photo">
-              <img src="template/image_gallery.jpg" id="cursorImage" ondragstart="return false;" style="transform: scale(1)"/>
-          </div>
-          <div class="image-logo">
-              <img src="template/Logo CCI - Bleu.png" id="logo"/>
-          </div>
-			  
-		  </div>
-          
-      </section>
+        
+      <p class="contient-texte-nom"><strong></strong><span class="texte-nom">truc de machin</span><span class="texte-societe">Société bidule</span></p>
+        
+    <div class="image-photo">
+        <img src="template/image_gallery.jpg" id="cursorImage" ondragstart="return false;" style="transform: scale(1)"/>
     </div>
+    <div class="image-logo">
+        <img src="template/Logo CCI - Bleu.png" id="logo"/>
+    </div>
+  
+</div>
+    
+</section>
+
+
+
+  
+  
+  
+  <div class="article-them-content article-simple-content">
+    
+ 
+    
+
     
     
     
@@ -109,47 +147,48 @@ de nouveaux matériaux.</p>
 	
 	
     <div id="zone-1">
-    <div class="contient_col padding_top_demi padding_bot_light">
+
+    <div class="d-flex flex-wrap py-3">
     
-        <div class="col_12 padding_bot_light">
+        <div class="col-12 pb-3">
         <p>Texte principal  - <em>forcer un saut de ligne &lt;br&gt;</em></p>
         <textarea id="select-text" rows="4" cols="50">Nous sommes pris dans le quotidien de l’entreprise, les recrutements, les contrats… Il est difficile de trouver les bons contacts. <br>La CCI nous a beaucoup aidés.</textarea>
         </div>
         
         
-        <div class="col_6 padding_bot_light">
+        <div class="col-6 pb-3">
         <p>Taille</p>
         <input type="number" id="select-text-size" value="230">
         </div>
         
-        <div class="col_6 padding_bot_light">
+        <div class="col-6 pb-3">
         <p>Interlignage</p>
         <input type="number" id="select-text-lh" value="130">
         </div>
 
         
-        <div class="col_12 padding_bot_light">
+        <div class="col-12 pb-3">
         <hr>
         </div>
         
         
-        <div class="col_6 padding_bot_light">
+        <div class="col-6 pb-3">
         <p>Nom</p>
         <input type="text" id="select-text-nom" value="Aymeric Le Brun">
         </div>
         
         
-        <div class="col_6 padding_bot_light">
+        <div class="col-6 pb-3">
         <p>Fonction</p>
         <input type="text" id="select-text-societe" value="Dirigeant de CYFAC">
         </div>
         
-        <div class="col_6 padding_bot_light">
+        <div class="col-6">
         <p>Taille</p>
         <input type="number" id="select-text-nom-size" value="150">
         </div>
         
-        <div class="col_6">
+        <div class="col-6">
         </div>
     
     </div>
@@ -158,26 +197,26 @@ de nouveaux matériaux.</p>
     
     
     <div id="zone-2">
-    <div class="contient_col padding_top_demi padding_bot_light">
+    <div class="d-flex flex-wrap py-3">
     
-        <div class="col_6 padding_bot_light">
+        <div class="col-6 pb-3">
           <p>Image</p>
          <input type="file" id="inputFileToLoad">
         </div>
            
         
             
-        <div class="col_6 padding_bot_light">
+        <div class="col-6 pb-3">
         <p>Taille de l'image</p>
         <input type="number" id="select-image-size" value="1">
         </div>
 		
         
-        <div class="col_12 padding_bot_light">
+        <div class="col-12 pb-3">
         <hr>
         </div>
 		
-        <div class="col_6 padding_bot_light">
+        <div class="col-6 ">
     <p>Logo de la CCI - version bleu conseillée (Format d'image .png)</p>
          <input type="file" id="inputLogoToLoad" accept="image/png">
         </div>
